@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Tech — Unduh Studio</title>
+  <meta name="description" content="Halaman unduhan resmi Our Tech Studio: IDE cepat untuk membangun aplikasi modern. Tersedia untuk Windows, macOS, dan Linux." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b1020;
+      --bg-soft:#0f1630;
+      --card:#121a3a;
+      --text:#e8eeff;
+      --muted:#a9b4d0;
+      --brand:#7c9bff;
+      --brand-2:#35e0c6;
+      --ring:#4d6bff55;
+      --success:#39d98a;
+      --warn:#f9c74f;
+      --danger:#ff6b6b;
+      --border:#243055;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 70% -10%, #20308044, transparent),
+                  radial-gradient(900px 500px at -10% 10%, #35e0c61a, transparent),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(1.2) blur(8px);
+      background:linear-gradient(to bottom, #0b1020dd, #0b1020aa);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center;text-decoration:none}
+    .logo{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 210deg, var(--brand), var(--brand-2));box-shadow:0 10px 30px #35e0c633}
+    .brand span{font-weight:700;letter-spacing:.2px}
+    .nav a{opacity:.9;text-decoration:none;margin-left:18px;font-weight:500}
+    .nav a:hover{opacity:1}.hero{padding:56px 0 28px}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(28px, 3.5vw, 44px);line-height:1.15;margin:0}
+.subtitle{color:var(--muted);margin-top:10px}
+.cta{
+  margin-top:24px;display:flex;gap:12px;flex-wrap:wrap
+}
+.btn{appearance:none;border:1px solid var(--border);background:linear-gradient(180deg,#1a2450,#101839);color:var(--text);padding:12px 16px;border-radius:14px;font-weight:600;text-decoration:none;display:inline-flex;gap:10px;align-items:center;cursor:pointer}
+.btn:hover{box-shadow:0 0 0 4px var(--ring)}
+.btn.primary{border-color:transparent;background:linear-gradient(180deg, var(--brand), #5c7cff);color:#0b1020}
+.btn.ghost{background:transparent}
+.chip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:999px;background:#18224b;border:1px solid var(--border);font-size:12px;color:var(--muted)}
+
+.panel{
+  background:linear-gradient(180deg,#121a3a,#0f1630);border:1px solid var(--border);
+  border-radius:18px;
+  padding: 18px;
+}
+.panel + .panel{margin-top:16px}*
+
+.hero-card{display:grid;gap:14px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+}
+
+/* Tabs (CSS only with radio buttons) */
+.tabs{margin-top:8px}
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tab-labels{display:flex;gap:8px;flex-wrap:wrap}
+.tab-labels label{
+  cursor:pointer;border:1px solid var(--border);background:#111939;padding:10px 14px;border-radius:12px;font-weight:600;color:var(--muted)
+}
+.tabs section{display:none;margin-top:14px}
+#tab-win:checked ~ .tab-labels label[for=tab-win],
+#tab-mac:checked ~ .tab-labels label[for=tab-mac],
+#tab-linux:checked ~ .tab-labels label[for=tab-linux]{
+  color:#0b1020;background:linear-gradient(180deg, var(--brand), #5c7cff);border-color:transparent
+}
+#tab-win:checked ~ #content-win,
+#tab-mac:checked ~ #content-mac,
+#tab-linux:checked ~ #content-linux{display:block}
+
+.download-card{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:14px 16px;border:1px solid var(--border);border-radius:16px;background:#0e1533}
+.meta{color:var(--muted);font-size:14px}
+
+.list{margin:0;padding-left:18px}
+.list li{margin:6px 0}
+
+.section{padding:28px 0}
+.section h2{margin:0 0 10px;font-size:clamp(20px,2.5vw,28px)}
+.section p{color:var(--muted)}
+
+.kpi{display:flex;gap:12px;align-items:center}
+.kpi b{font-size:22px}
+
+details{background:#0e1533;border:1px solid var(--border);border-radius:14px;padding:12px}
+details + details{margin-top:10px}
+details summary{cursor:pointer;font-weight:600}
+
+footer{border-top:1px solid var(--border);margin-top:32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;padding:28px 0}
+.muted{color:var(--muted)}
+@media (max-width: 800px){.footer-grid{grid-template-columns:1fr}}
+
+/* tiny helpers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.w-100{width:100%}
+
+.video-wrapper{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid var(--border)
+}
+.video-wrapper iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+  border-radius:16px
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#" aria-label="Our Tech beranda">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Our Tech</span>
+      </a>
+      <nav aria-label="Utama">
+        <a href="#fitur">Fitur</a>
+        <a href="#unduhan">Unduhan</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="chip" aria-hidden="true">Versi stabil • 2025.2</span>
+          <h1>Install <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Call Ur Dev<br></span>
+            find your programmer!</h1>
+          <p class="subtitle">Kami bukan sekadar mitra, kami solusi yang terpercaya, berkualitas, dan siap bekerjasama.</p>
+          <div class="cta">
+            <a class="btn primary" href="#unduhan" aria-label="Lompat ke unduhan">⬇️ Download sekarang</a>
+            <a class="btn ghost" href="#catatan-rilis">📝 Catatan rilis</a>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div class="kpi"><span aria-hidden="true">🙌</span><b>Terpercaya</b><span class="muted"></span></div>
+            <div class="kpi"><span aria-hidden="true">👍</span><b>Bagus</b><span class="muted"></span></div>
+            <div class="kpi"><span aria-hidden="true">🧑‍💻</span><b>Kerjasama</b><span class="muted"></span></div>
+          </div>
+        </div>
+       <div>
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video promosi Our Tech" allowfullscreen></iframe>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <!-- DOWNLOADS -->
+<section id="unduhan" class="section">
+  <h2><br><br><br>Unduhan</h2>
+  <p class="muted">Pilih platform kamu</p>
+
+  <div class="panel tabs" role="tablist" aria-label="Pilihan platform">
+    <input type="radio" name="tabs" id="tab-win" checked>
+    <input type="radio" name="tabs" id="tab-mac">
+    <input type="radio" name="tabs" id="tab-linux">
+
+    <div class="tab-labels">
+      <label role="tab" for="tab-win" aria-controls="content-win" aria-selected="true">Android</label>
+      <label role="tab" for="tab-mac" aria-controls="content-mac">iOS</label>
+    </div>
+
+    <!-- Windows -->
+    <section id="content-win" role="tabpanel" aria-labelledby="tab-win">
+      <div class="download-card">
+        <div>
+          <b>Call Ur Dev 1.0.1</b>
+          <div class="meta">callurdev .apk • 75.8 MB</div>
+        </div>
+        <a class="btn" href="#">Unduh</a>
+      </div>
+      <ul class="list meta">
+        <li>Hanya membutuhkan nomor telepon dan akun google</li>
+    
+      </ul>
+    </section>
+
+    <!-- macOS -->
+    <section id="content-mac" role="tabpanel" aria-labelledby="tab-mac">
+      <div class="download-card">
+        <div>
+          <b>Call Ur Dev 1.0.1</b>
+          <div class="meta">callurdev .ipa • 76.4 MB</div>
+        </div>
+        <a class="btn" href="#">Unduh</a>
+      </div>
+      <ul class="list meta">
+        <li>Hanya membutuhkan nomor telepon dan akun iCloud</li>
+      </ul>
+    </section>
+
+
+  <label class="row" style="margin-top:12px;align-items:flex-start;gap:10px">
+    <input type="checkbox" aria-label="Saya setuju dengan perjanjian lisensi">
+    <span class="muted">Dengan mengunduh, kamu menyetujui <a href="#" style="text-decoration:underline">Perjanjian Lisensi Pengguna Akhir</a> dan <a href="#" style="text-decoration:underline">Kebijakan Privasi</a>.</span>
+  </label>
+</section>
+
+<!-- FEATURES -->
+<section id="fitur" class="section">
+  <h2><br><br><br><br>Fitur unggulan</h2>
+  <div class="grid-3">
+    <div class="panel">
+      <b> Programmer terpercaya</b>
+      <p class="muted">banyaknya programmer yang memiliki pengalaman membuat projek</p>
+    </div>
+    <div class="panel">
+      <b>banyak pilihan</b>
+      <p class="muted">dimulai dari web developer, game developer dan lainnya</p>
+    </div>
+    <div class="panel">
+      <b>harga terjangkau </b>
+      <p class="muted">Solusi berkualitas tanpa beban biaya</p>
+    </div>
+  </div>
+</section>
+
+<!-- RELEASE NOTES / CHECKSUMS -->
+<section id="catatan-rilis" class="section">
+  <h2>Catatan rilis & checksum</h2>
+  <details>
+    <summary>2025.8 (1.0.1)</summary>
+    <ul class="list meta">
+      <li>Memperbaiki bug dan masalah didalam aplikasi </li>
+    </ul>
+  </details>
+  <details>
+    <summary>2025.7 (1.0.0)</summary>
+    <p class="meta">Rilis perawatan jangka panjang dengan patch keamanan terbaru.</p>
+  </details>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <h2><br><br>Pertanyaan yang sering ditanyakan</h2>
+  <details>
+    <summary>Apa beda edisi lama dan terbaru?</summary>
+    <p class="muted">Versi baru memperbaiki bug pada aplikasi</p>
+  </details>
+  <details>
+    <summary>Bagaimana memverifikasi akun?</summary>
+    <p class="muted">Setelah mengunduh, masukkan nomor telepon atau akun google, lalu masukkan kode otp dari gmail atau sms </p>
+  </details>
+  <details>
+    <summary>Apakah bisa memesannya dari web saja?</summary>
+    <p class="muted">belum bisa. kami akan selalu update aplikasi ini!</p>
+  </details>
+</section>
+
+  </main>  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="logo" aria-hidden="true"></span><span>Our Tech</span></div>
+        <p class="muted">© 2025 Our Tech. Dibuat dengan cinta untuk developer Indonesia.</p>
+      </div>
+      <div>
+        <b>Sumber daya</b>
+        <ul class="list">
+          <li><a href="#">Dokumentasi</a></li>
+          <li><a href="#">Plugin</a></li>
+          <li><a href="#">Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <b>Legal</b>
+        <ul class="list">
+          <li><a href="#">Lisensi</a></li>
+          <li><a href="#">Privasi</a></li>
+          <li><a href="#">Ketentuan</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
